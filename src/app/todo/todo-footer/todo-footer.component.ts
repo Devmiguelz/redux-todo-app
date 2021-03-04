@@ -16,6 +16,7 @@ export class TodoFooterComponent implements OnInit {
   filtrosValidos: filtrosValidos[] = ["todos", "completado", "pendiente"];
   filtroActual: filtrosValidos;
   pendintes: number;
+  completada: boolean;
   
   constructor(private store: Store<AppState>) { }
 
@@ -35,7 +36,7 @@ export class TodoFooterComponent implements OnInit {
     this.store.dispatch(accion);
   }
 
-  limpiarTodo(){
+  borrarTodo(){
     const accion = new BorrarTodosTodoAction();
     this.store.dispatch(accion);
   }
